@@ -26,8 +26,19 @@ Everyone is aware that IMAP acounts need to be backed up ;-)
 - you have the choice of INCREMENTAL backup (recommended) or complete REBUILD of account backup to mirror the IMAP server
 
 # my tests
+- i used Python 3.9 on Windows 10
 - i tested several accounts on PlanetHoster 
 - i backuped hundreds of messages
 - i verified the messages using an EML viewer i just found (Systool EML viewer)
 
 # now it's up to you
+- after downloadind bakimap.py, you have to set some parameters before using it
+
+```
+# params
+HOST     = "imap.me.com"
+USERNAME = "me@me.com"
+PASSWORD = "$$##$$"
+FOLDERS  = ["INBOX", "Sent"]        # folder list to backup
+BACKUP   = "NEW"   # "NEW" to backup only new messages (INCREMENTAL, recommended) or "RESET" to backup all messages to match exactly what is in IMAP server
+```
