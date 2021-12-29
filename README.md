@@ -1,2 +1,33 @@
 # bakimap
-Python code to backup your IMAP accounts
+Python code to backup your IMAP accounts (really working and really FREE and opensource)
+
+# the story
+I just wanted to learn Python and to use it on deep learning with TensorFlow.
+The step was to large.
+As i have another need, i decided to switch.
+I didn't find any free opensource IMAP backup solution anywhere so i decided to build one.
+Everyone is aware that IMAP acounts need to be backed up ;-)
+
+# the needs
+- i have several IMAP accounts by different host companies to backup
+- i want to do it with Python
+- i want to recreate the same folder tree in my local disk as the folders tree in my IMAP account
+- as i want to run my script quite often, i need an INCREMENTAL backup
+- i want to save every message as a EML text file to be able to open it with my text editor of choice or any EML viewer
+
+# the result
+- i built a Python script !
+- the script can backup only one IMAP account with the choice of its folders
+- for each IMAP account, i duplicate the script under another name ...
+- the script creates a subfolder using the name of the account
+- the script creates a subfolder for each IMAP folder in the account folder
+- each message is a EML file
+- the script uses SSL protocol
+- you have the choice of INCREMENTAL backup (recommended) or complete REBUILD of account backup to mirror the IMAP server
+
+# my tests
+- i tested several accounts on PlanetHoster 
+- i backuped hundreds of messages
+- i verified the messages using an EML viewer i just found (Systool EML viewer)
+
+# now it's up to you
