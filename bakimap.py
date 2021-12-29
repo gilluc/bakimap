@@ -76,17 +76,21 @@ def BuildFilename(body):
     #getdate = f"{today:%Y%m%d_%H%M%S}"
     getdate = '20000101_120000'
     posdate = body.find(b'\nDate: ')
+    if (posdate <0):
+        posdate = body.find(b'Date: ')
     if (posdate >=0):
         enddate = body.find(b'\r', posdate)
         if (enddate < posdate):
             endate = posdate + 32
         zone = body[posdate:enddate]
-        match = re.search(r'(\d{2,2}) (\w{3,3}) (\d{4,4}) (\d{2,2}):(\d{2,2}):(\d{2,2})', str(zone))
+        match = re.search(r'(\d{1,2}) (\w{3,3}) (\d{4,4}) (\d{2,2}):(\d{2,2}):(\d{2,2})', str(zone))
         if match:
             getdate = match[3] + ConvertMonth(match[2]) + match[1] + '_' + match[4] +match[5] + match[6]
         
     getid = '12345678'
     posid   = body.find(b'\nMessage-ID: ')
+    if (posid <0):
+        posid   = body.find(b'\nMessage-Id: ')
     if (posid >=0):
         endid = body.find(b'\r', posid)
         if (endid < posid):
