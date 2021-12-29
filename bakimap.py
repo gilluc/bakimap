@@ -74,21 +74,25 @@ def ConvertMonth(month):
 def BuildFilename(body):
     #today = datetime.datetime.today()
     #getdate = f"{today:%Y%m%d_%H%M%S}"
-    getdate = '20200101_120000'
-    posdate = body.find(b'Date: ')
+    getdate = '20000101_120000'
+    posdate = body.find(b'\nDate: ')
     if (posdate >=0):
         enddate = body.find(b'\r', posdate)
+        if (enddate < posdate):
+            endate = posdate + 32
         zone = body[posdate:enddate]
-        match = re.search(r': (\w{3,3}), (\d{2,2}) (\w{3,3}) (\d{4,4}) (\d{2,2}):(\d{2,2}):(\d{2,2})', str(zone))
+        match = re.search(r'(\d{2,2}) (\w{3,3}) (\d{4,4}) (\d{2,2}):(\d{2,2}):(\d{2,2})', str(zone))
         if match:
-            getdate = match[4] + ConvertMonth(match[3]) + match[2] + '_' + match[5] +match[6] + match[7]
+            getdate = match[3] + ConvertMonth(match[2]) + match[1] + '_' + match[4] +match[5] + match[6]
         
     getid = '12345678'
-    posid   = body.find(b'Message-ID: ')
+    posid   = body.find(b'\nMessage-ID: ')
     if (posid >=0):
         endid = body.find(b'\r', posid)
+        if (endid < posid):
+            endid = posid + 128
         zone = body[posid:endid]
-        match = re.search(r'<(.+)>', str(zone))
+        match = re.search(r'<([^>]*)>', str(zone))
         if match:
             getid = str(int(hashlib.sha1(match[1].encode("utf-8")).hexdigest(), 16) % (10 ** 8))
         
