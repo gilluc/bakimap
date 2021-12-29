@@ -3,7 +3,7 @@ Python code to backup your IMAP accounts (really working and really FREE and ope
 
 # the story
 I just wanted to learn Python and to use it on deep learning with TensorFlow.
-The step was to large.
+The step was too large.
 As i have another need, i decided to switch.
 I didn't find any free opensource IMAP backup solution anywhere so i decided to build one.
 Everyone is aware that IMAP acounts need to be backed up ;-)
