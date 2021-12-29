@@ -9,7 +9,7 @@ I didn't find any free opensource IMAP backup solution anywhere so i decided to 
 Everyone is aware that IMAP acounts need to be backed up ;-)
 
 # the needs
-- i have several IMAP accounts by different host companies to backup
+- i have several IMAP accounts by different hosting companies to backup
 - i want to do it with Python
 - i want to recreate the same folder tree in my local disk as the folders tree in my IMAP account
 - as i want to run my script quite often, i need an INCREMENTAL backup
@@ -29,10 +29,10 @@ Everyone is aware that IMAP acounts need to be backed up ;-)
 - i used Python 3.9 on Windows 10
 - i tested several accounts on PlanetHoster 
 - i backuped hundreds of messages
-- i verified the messages using an EML viewer i just found (Systool EML viewer)
+- i verified the messages using Notepad++ and a EML viewer i just found (Systool EML viewer)
 
 # now it's up to you
-- after downloadind bakimap.py, you have to set some parameters before using it
+- after downloadind bakimap.py, you have to set some parameters (as usual) before using it
 
 ```
 # params
