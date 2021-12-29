@@ -32,7 +32,7 @@ Everyone is aware that IMAP acounts need to be backed up ;-)
 - i verified the messages using Notepad++ and a EML viewer i just found (Systool EML viewer)
 
 # now it's up to you
-- after downloadind bakimap.py, you have to set some parameters (as usual) before using it
+- after downloading bakimap.py, you have to set some parameters (as usual) before using it
 
 ```
 # params
