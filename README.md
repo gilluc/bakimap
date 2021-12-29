@@ -20,7 +20,7 @@ Everyone is aware that IMAP acounts need to be backed up ;-)
 - the script can backup only one IMAP account with the choice of its folders
 - for each IMAP account, i duplicate the script under another name ...
 - the script creates a subfolder using the name of the account
-- the script creates a subfolder for each IMAP folder in the account folder
+- the script creates a subfolder for each IMAP folder in the account subfolder
 - each message is a EML file
 - the script uses SSL protocol
 - you have the choice of INCREMENTAL backup (recommended) or complete REBUILD of account backup to mirror the IMAP server
