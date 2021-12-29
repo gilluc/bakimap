@@ -1,5 +1,15 @@
 # bakimap
 Python code to backup your IMAP accounts (really working and really FREE and opensource)
+```
+PS D:\GILLES\CIMAP> py .\bakimap.py
+Reset All Mode!
+119 messages in INBOX
+119 new messages
+Reset All Mode!
+239 messages in Sent
+239 new messages
+PS D:\GILLES\CIMAP>
+```
 
 # the story
 I just wanted to learn Python and to use it on deep learning with TensorFlow.
