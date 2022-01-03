@@ -41,6 +41,11 @@ Everyone is aware that IMAP acounts need to be backed up ;-)
 - i backuped hundreds of messages
 - i verified the messages using Notepad++ and a EML viewer i just found (Systool EML viewer)
 
+# dependency
+```
+pip install IMAPClient
+```
+
 # now it's up to you
 - after downloading bakimap.py, you have to set some parameters (as usual) before using it
 
