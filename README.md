@@ -40,7 +40,7 @@ Everyone is aware that IMAP acounts need to be backed up ;-)
 - i tested several accounts on PlanetHoster and Free.fr
 - i backuped hundreds of messages
 - i verified the messages using Notepad++ and two free EML viewers i just found (one from dalecoop.com and one from mitec.cz)
-- [dalecoop EML viewer](https://www.01net.com/telecharger/windows/Internet/internet_utlitaire/fiches/130608.html) is great for opening EML file by double clic
+- [dalecoop EML viewer](https://www.01net.com/telecharger/windows/Internet/internet_utlitaire/fiches/130608.html) is great to open EML file by double clic
 - [mitec mail viewer](https://mitec.cz/mailview.html) is great to open a folder containing EML files
 
 # dependency
