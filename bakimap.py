@@ -8,6 +8,7 @@
 import os
 import re
 import ssl
+import sys
 import hashlib
 import datetime
 from imapclient import IMAPClient
@@ -85,7 +86,10 @@ def BuildFilename(body):
         zone = body[posdate:enddate]
         match = re.search(r'(\d{1,2}) (\w{3,3}) (\d{4,4}) (\d{2,2}):(\d{2,2}):(\d{2,2})', str(zone))
         if match:
-            getdate = match[3] + ConvertMonth(match[2]) + match[1] + '_' + match[4] +match[5] + match[6]
+            day = match[1]
+            if (len(day)==1):
+                day = '0' + day
+            getdate = match[3] + ConvertMonth(match[2]) + day + '_' + match[4] +match[5] + match[6]
         
     getid = '12345678'
     posid   = body.find(b'\nMessage-ID: ')
@@ -104,6 +108,9 @@ def BuildFilename(body):
     return fname
 
 # main -------------------------------------------------------------------------
+
+if len( sys.argv ) == 2:
+    BACKUP = sys.argv[1]
 
 ssl_context = ssl.create_default_context()
 ssl_context.check_hostname = False
@@ -136,5 +143,4 @@ for cfolder in FOLDERS:
                 backuped += 1
 
         server.logout()
-        print('%d new messages' % (backuped))
-
+        print('%d new saved messages' % (backuped))
