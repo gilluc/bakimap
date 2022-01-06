@@ -37,9 +37,9 @@ Everyone is aware that IMAP acounts need to be backed up ;-)
 
 # my tests
 - i used Python 3.9 on Windows 10
-- i tested several accounts on PlanetHoster and Free.fr
+- i tested several accounts on [PlanetHoster](https://www.planethoster.com/fr/Hebergements-World) and [Free.fr](https://assistance.free.fr/articles/605)
 - i backuped hundreds of messages
-- i verified the messages using Notepad++ and two free EML viewers i just found (one from dalecoop.com and one from mitec.cz)
+- i verified the messages using [Notepad++](https://notepad-plus-plus.org/downloads/v8.2/) and two free EML viewers i just found :
 - [dalecoop EML viewer](https://www.01net.com/telecharger/windows/Internet/internet_utlitaire/fiches/130608.html) is great to open EML file by double clic
 - [mitec mail viewer](https://mitec.cz/mailview.html) is great to open a folder containing EML files
 
