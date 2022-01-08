@@ -1,14 +1,23 @@
 # bakimap
 Python code to backup your IMAP accounts (really working and really FREE and opensource)
 ```
-PS D:\GILLES\CIMAP> py .\bakimap.py
-Reset All Mode!
-119 messages in INBOX
-119 new messages
-Reset All Mode!
-239 messages in Sent
-239 new messages
-PS D:\GILLES\CIMAP>
+D:\GILLES\CIMAP>py bakimap.py
+Server : imap.me.com, Account : me@me.com, Mode : NEW
+Found folders:
+        Spam
+        Objets envoyés
+        Courrier indésirable
+        Corbeille
+        Brouillons
+        Éléments envoyés
+        INBOX
+Folder : INBOX
+        106 messages found
+        106 messages saved
+Folder : Éléments envoyés
+        55 messages found
+        55 messages saved
+D:\GILLES\CIMAP>
 ```
 
 # the story
