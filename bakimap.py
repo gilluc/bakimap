@@ -116,19 +116,26 @@ ssl_context = ssl.create_default_context()
 ssl_context.check_hostname = False
 ssl_context.verify_mode = ssl.CERT_NONE
 
+with IMAPClient(HOST, ssl_context=ssl_context) as server:
+    print ('Server : ' + HOST + ', Account : ' + USERNAME + ', Mode : ' + BACKUP)
+    server.login(USERNAME, PASSWORD)
+    print ('Found folders: ')
+    folders = server.list_folders()
+    for folder in folders:
+        print ("\t" + folder[2])
+    server.logout()
+
 for cfolder in FOLDERS:
     with IMAPClient(HOST, ssl_context=ssl_context) as server:
         server.login(USERNAME, PASSWORD)
         backuped = 0
         folderpath = BuildPath(HOST, USERNAME, cfolder)
         if (BACKUP == "RESET"):
-            print ('Reset All Mode!')
             RemoveExistingBackup(folderpath)
-        else:
-            print ('New Only Mode!')
         
         select_info = server.select_folder(cfolder, readonly=True)
-        print('%d messages in %s' % (select_info[b'EXISTS'] ,cfolder))
+        print ('Folder : ' + cfolder)
+        print("\t" + '%s messages found' % (select_info[b'EXISTS']))
 
         messages = server.search() # [b'NOT', b'DELETED']
         for uid, message_data in server.fetch(messages, "RFC822").items():
@@ -143,4 +150,5 @@ for cfolder in FOLDERS:
                 backuped += 1
 
         server.logout()
-        print('%d new saved messages' % (backuped))
+        print("\t" + '%s messages saved' % (backuped))
+
