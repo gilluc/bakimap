@@ -42,7 +42,7 @@ def RemoveExistingBackup(path):
             os.rmdir(subdir)
         for name in files:
             os.remove(os.path.join(root, name))
-            
+
 # convert month to number
 def ConvertMonth(month):
     if (month == 'Jan'):
@@ -75,6 +75,7 @@ def ConvertMonth(month):
 def BuildFilename(body):
     #today = datetime.datetime.today()
     #getdate = f"{today:%Y%m%d_%H%M%S}"
+
     getdate = '20000101_120000'
     posdate = body.find(b'\nDate: ')
     if (posdate <0):
@@ -90,7 +91,7 @@ def BuildFilename(body):
             if (len(day)==1):
                 day = '0' + day
             getdate = match[3] + ConvertMonth(match[2]) + day + '_' + match[4] +match[5] + match[6]
-        
+
     getid = '12345678'
     posid   = body.find(b'\nMessage-ID: ')
     if (posid <0):
@@ -103,7 +104,7 @@ def BuildFilename(body):
         match = re.search(r'<([^>]*)>', str(zone))
         if match:
             getid = str(int(hashlib.sha1(match[1].encode("utf-8")).hexdigest(), 16) % (10 ** 8))
-        
+
     fname = '/' + getdate + '_' + getid + '.eml'
     return fname
 
@@ -132,7 +133,7 @@ for cfolder in FOLDERS:
         folderpath = BuildPath(HOST, USERNAME, cfolder)
         if (BACKUP == "RESET"):
             RemoveExistingBackup(folderpath)
-        
+
         select_info = server.select_folder(cfolder, readonly=True)
         print ('Folder : ' + cfolder)
         print("\t" + '%s messages found' % (select_info[b'EXISTS']))
