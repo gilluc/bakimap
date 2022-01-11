@@ -1,4 +1,4 @@
-# bakimap
+# bakimapxx
 Python code to backup your IMAP accounts (really working and really FREE and opensource)
 ```
 D:\GILLES\CIMAP>py bakimap.py
