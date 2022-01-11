@@ -9,12 +9,12 @@ Found folders:
         Courrier indésirable
         Corbeille
         Brouillons
-        Éléments envoyés
+        Sent
         INBOX
 Folder : INBOX
         106 messages found
         106 messages saved
-Folder : Éléments envoyés
+Folder : Sent
         55 messages found
         55 messages saved
 D:\GILLES\CIMAP>
